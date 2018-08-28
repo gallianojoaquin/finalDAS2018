@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xsi:noNamespaceSchemaLocation="../schema/actions.xsd">
+    <form-beans>
+    </form-beans>
+    <action-mappings>    		
+    
+    <!-- ADMINISTRACION DE CONCESIONARIAS -->	
+		<action path="/SideMenu.do" type="AdminSideMenuAction">
+			<forward name="success" path="/admin/sideMenu.jsp" />
+		</action>
+		<action path="/Pendientes.do" type="AdminPendientesAction">
+			<forward name="success" path="/admin/admin-pendientes.jsp" />
+		</action>
+		<action path="/Aceptadas.do" type="AdminAceptadasAction">
+			<forward name="success" path="/admin/admin-aceptadas.jsp" />
+		</action>
+		<action path="/Declinadas.do" type="AdminDeclinadasAction">
+			<forward name="success" path="/admin/admin-declinadas.jsp" />
+		</action>
+		<action path="/EstadoConcesionaria.do" type="AdminEstadoAction">
+			<forward name="success" path="/util/succes.jsp" />
+		</action>
+		<action path="/Sorteos.do" type="AdminSorteosAction">
+			<forward name="success" path="/admin/Sorteos.jsp" />
+		</action>
+		<action path="/CargarSorteo.do" type="AdminCargarSorteoAction">
+			<forward name="success" path="/admin/Sorteos.jsp" />
+		</action>
+		<action path="/ConfigConcesionaria.do" type="AdminConfigConcesionariaAction">
+			<forward name="success" path="/admin/admin-aceptadas.jsp" />
+		</action>		
+		<action path="/Ping.do" type="AdminPingAction" noforward="true">
+		</action>
+		<action path="/EliminarSorteo.do" type="AdminEliminarSorteoAction" noforward="true">
+		</action>
+		<action path="/Resumen.do" type="AdminResumenAction">
+			<forward name="success" path="/admin/home2.jsp" />
+		</action>	
+		<action path="/DetalleSorteos.do" type="AdminDetalleSorteosAction">
+			<forward name="success" path="/admin/detalleSorteos.jsp" />
+		</action>	
+		<action path="/ParticipantesSorteos.do" type="AdminParticipantesSorteosAction">
+			<forward name="success" path="/admin/participantesSorteos.jsp" />
+		</action>	
+	
+	<!-- ACTUALIZACION DE CLIENTES -->
+		<action path="/Prueba.do" type="PruebaAction">
+			<forward name="success" path="/admin/Avisos.do" />
+		</action>
+		<action path="/Clientes.do" type="AdminActualizaClientesAction">
+			<forward name="success" path="/admin/ActualizarClientes.jsp" />
+		</action>
+		<action path="/ListaClientes.do" type="AdminListaClientesAction">
+			<forward name="success" path="/clientes/tablaClientes.jsp" />
+		</action>
+		
+	<!-- HOME -->
+		<action path="/Home.do" type="AdminHomeAction" >
+   	 		<forward name="success" path="/home/home.jsp"></forward>
+    	</action>
+    	<action path="/Dashboard.do" type="AdminDashboardAction">
+			<forward name="success" path="/admin/dashboard.jsp"/>
+		</action>			
+		
+	<!-- LOGIN -->
+		<action path="/Login.do" type="AdminLoginAction">
+			<forward name="success" path="/login/login.jsp" />
+		</action>
+		<action path="/Validar.do" type="AdminLoginValidarAction">
+			<forward name="successAdmin" path="/admin/dashboard.jsp" />
+			<forward name="success" path="/clientes/clientes.jsp" />
+			<forward name="error" path="/home/error.jsp" /> 
+		</action>
+    </action-mappings>
+</actions>
