@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="ClientesWSService" targetNamespace="http://ws.src.das.ubp.edu.ar/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.src.das.ubp.edu.ar/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.src.das.ubp.edu.ar/" version="1.0" xmlns:tns="http://ws.src.das.ubp.edu.ar/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="clientes" type="tns:clientes"/>
+
+  <xs:element name="clientesResponse" type="tns:clientesResponse"/>
+
+  <xs:element name="ganador" type="tns:ganador"/>
+
+  <xs:element name="ganadorResponse" type="tns:ganadorResponse"/>
+
+  <xs:element name="ping" type="tns:ping"/>
+
+  <xs:element name="pingResponse" type="tns:pingResponse"/>
+
+  <xs:complexType name="ping">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="pingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clientes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clientesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ganador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg3" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg4" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ganadorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ping">
+    <wsdl:part name="parameters" element="tns:ping">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clientes">
+    <wsdl:part name="parameters" element="tns:clientes">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pingResponse">
+    <wsdl:part name="parameters" element="tns:pingResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ganadorResponse">
+    <wsdl:part name="parameters" element="tns:ganadorResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clientesResponse">
+    <wsdl:part name="parameters" element="tns:clientesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ganador">
+    <wsdl:part name="parameters" element="tns:ganador">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ClientesWS">
+    <wsdl:operation name="ping">
+      <wsdl:input name="ping" message="tns:ping">
+    </wsdl:input>
+      <wsdl:output name="pingResponse" message="tns:pingResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clientes">
+      <wsdl:input name="clientes" message="tns:clientes">
+    </wsdl:input>
+      <wsdl:output name="clientesResponse" message="tns:clientesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ganador">
+      <wsdl:input name="ganador" message="tns:ganador">
+    </wsdl:input>
+      <wsdl:output name="ganadorResponse" message="tns:ganadorResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientesWSServiceSoapBinding" type="tns:ClientesWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ping">
+      <soap:operation soapAction="urn:Ping" style="document"/>
+      <wsdl:input name="ping">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pingResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="clientes">
+      <soap:operation soapAction="urn:Clientes" style="document"/>
+      <wsdl:input name="clientes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clientesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ganador">
+      <soap:operation soapAction="urn:Ganador" style="document"/>
+      <wsdl:input name="ganador">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ganadorResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientesWSService">
+    <wsdl:port name="ClientesWSPort" binding="tns:ClientesWSServiceSoapBinding">
+      <soap:address location="http://localhost:8080/ConcesionariaAvalCXF/services"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
