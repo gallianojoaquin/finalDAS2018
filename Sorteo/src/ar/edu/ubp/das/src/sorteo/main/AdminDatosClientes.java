@@ -25,6 +25,11 @@ import ar.edu.ubp.das.src.sorteo.daos.MSActualizacionesDao;
 /*import ar.edu.ubp.das.src.sorteo.daos.MSClientesDao;*/
 import ar.edu.ubp.das.src.sorteo.daos.MSGetConcesionariaDao;
 
+/**
+*
+* @author JOAQU√çN GALLIANO
+*
+*/
 public class AdminDatosClientes {
 	
 	private static AdminDatosClientes instance = null;
@@ -134,12 +139,12 @@ public class AdminDatosClientes {
 			estadoActualizacion= "FAILURE";
 			
 			System.out.println(e.getLocalizedMessage());
-			System.out.println("# \t -- Alg˙n error al actualizar los datos de la concesionaria" );
+			System.out.println("# \t -- Alg√∫n error al actualizar los datos de la concesionaria" );
 			
 			this.logError( "[" + concesionariaActual.getItem("razonSocial") + "] " + concesionariaActual.getItem("tecnologia") + ": "+ e.getMessage() );
 		}
 		
-		System.out.println("# \t -- Registrando la actualizaciÛn de datos");
+		System.out.println("# \t -- Registrando la actualizaci√≥n de datos");
 		System.out.println("# \t -- Marco la actualizacion en la concesionaria.");
 		
 		MSActualizacionesDao actualizacionesDao;
@@ -155,9 +160,9 @@ public class AdminDatosClientes {
 			System.out.println("#\t -- Actualizacion guardada ");
 		}
 		catch (SQLException e) {
-			System.out.println("#\t -- Error al registrar actualizaciÛn: " + e.getMessage());
+			System.out.println("#\t -- Error al registrar actualizaci√≥n: " + e.getMessage());
 
-			this.logError( "Error al registrar actualizaciÛn: " + e.getMessage() );
+			this.logError( "Error al registrar actualizaci√≥n: " + e.getMessage() );
 		}
 		
 		return procesadoOk;
@@ -259,7 +264,7 @@ public class AdminDatosClientes {
 			return true;
 		}
 		catch (SQLException e) {
-			System.out.println("#\t -- Error en mÈtodo insertarSuscripcion");
+			System.out.println("#\t -- Error en m√©todo insertarSuscripcion");
 			System.out.println(e.getMessage());
 			return false;
 		}
@@ -282,7 +287,7 @@ public class AdminDatosClientes {
 			return true;
 		}
 		catch (SQLException e) {
-			System.out.println("#\t -- Error en mÈtodo insertarAuto");
+			System.out.println("#\t -- Error en m√©todo insertarAuto");
 			System.out.println(e.getMessage());
 			return false;
 		}
@@ -308,7 +313,7 @@ public class AdminDatosClientes {
 			return true;
 		}
 		catch (SQLException e) {
-			System.out.println("#\t -- Error en mÈtodo insertarCliente");
+			System.out.println("#\t -- Error en m√©todo insertarCliente");
 			System.out.println(e.getMessage());
 			return false;
 		}
@@ -322,7 +327,7 @@ public class AdminDatosClientes {
 			return actualizacionesDao.getMaxIdActualizacion();
 		}
 		catch (SQLException e) {
-			System.out.println("#\t -- Error en mÈtodo getMaxIdCliente");
+			System.out.println("#\t -- Error en m√©todo getMaxIdCliente");
 			System.out.println(e.getMessage());
 		}
 		return 0;
@@ -345,7 +350,7 @@ public class AdminDatosClientes {
 			ret = autosDao.getIdAuto(form);
 		}
 		catch (SQLException e) {
-			System.out.println("#\t -- Error en mÈtodo getIdAuto");
+			System.out.println("#\t -- Error en m√©todo getIdAuto");
 			System.out.println(e.getMessage());
 		}
 		return ret;
@@ -362,7 +367,7 @@ public class AdminDatosClientes {
 			erroresDao.insert(form);
 		}
 		catch (SQLException e) {
-			System.out.println("#\t -- Error en mÈtodo logError");
+			System.out.println("#\t -- Error en m√©todo logError");
 			System.out.println(e.getMessage());
 		}
 		
