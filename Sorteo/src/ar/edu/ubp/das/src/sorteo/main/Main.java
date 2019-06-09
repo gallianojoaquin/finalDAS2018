@@ -4,12 +4,17 @@ import java.util.Date;
 
 import ar.edu.ubp.das.mvc.action.DynaActionForm;
 
+/**
+*
+* @author JOAQU√çN GALLIANO
+*
+*/
 public class Main {
 
 	public static void main(String []args) {
               
 		System.out.println( "###############################################################################");
-		System.out.println( "# -> Iniciando aplicaciÛn Sorteo - " + new Date().toString());
+		System.out.println( "# -> Iniciando aplicaci√≥n Sorteo - " + new Date().toString());
 		System.out.println( "###############################################################################");
 		System.out.println( "#");
 		
@@ -60,8 +65,8 @@ public class Main {
 		if(!actualizacionOk) {
 			
 			System.out.println( "#");
-			System.out.println( "# -> °°°Se produjo un error al actualizar los datos de los clientes !!!  ");
-			System.out.println( "# -> °°°No se llevara a cabo el sorteo!!! ");
+			System.out.println( "# -> ¬°¬°¬°Se produjo un error al actualizar los datos de los clientes !!!  ");
+			System.out.println( "# -> ¬°¬°¬°No se llevara a cabo el sorteo!!! ");
 			System.out.println( "#");
 
 			sorteo.setEstadoSorteo(idSorteo, "actualizar");	
@@ -171,7 +176,7 @@ public class Main {
 		System.out.println( "#");
 		System.out.println( "###############################################################################");
 		System.out.println( "#");
-		System.out.println( "# -> Finalizando aplicaciÛn Sorteo - " + new Date().toString() + "");
+		System.out.println( "# -> Finalizando aplicaci√≥n Sorteo - " + new Date().toString() + "");
 		System.out.println( "#");
 		System.out.println( "###############################################################################");
 		System.exit(0);

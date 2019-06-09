@@ -6,16 +6,17 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
-
-//import org.apache.commons.lang.time.DateUtils;
-
 import ar.edu.ubp.das.mvc.action.DynaActionForm;
 import ar.edu.ubp.das.mvc.db.Dao;
 import ar.edu.ubp.das.mvc.db.DaoFactory;
 import ar.edu.ubp.das.src.sorteo.consumo.ClienteServicio;
 import ar.edu.ubp.das.src.sorteo.daos.MSActualizacionesDao;
 import ar.edu.ubp.das.src.sorteo.daos.MSSorteosDao;
-
+/**
+*
+* @author JOAQU√çN GALLIANO
+*
+*/
 public class Sorteo {
 
 	public Sorteo() {
@@ -224,7 +225,7 @@ public class Sorteo {
 		System.out.println("# -> Enviando mail a " + toEmailAddr);
 		System.out.println("#");
 		String subject = "Ganador del sorteo mensual!!!";
-		String body = "El ganador del sorteo mensual es: " + apellido + ", " + nombre + ". °°°Felicitaciones!!!";
+		String body = "El ganador del sorteo mensual es: " + apellido + ", " + nombre + ". ¬°¬°¬°Felicitaciones!!!";
 		try {
 			sendEmail(toEmailAddr, subject, body);
 			System.out.println("# -> Email enviado correctamente ");
@@ -245,8 +246,8 @@ public class Sorteo {
 			this.setEstadoSorteo(idSorteo, "notificar");
 			
 			System.out.println("#");
-			System.out.println("# -> Uno de los par·metros es nulo por lo que se aborta la notificaciÛn <- ");
-			System.out.println("# -> Par·metros:  " + idSorteo + " - " + nombre + " - " + apellido + " - " + idCliente + " - " + razonSocialConcesionaria);
+			System.out.println("# -> Uno de los par√°metros es nulo por lo que se aborta la notificaci√≥n <- ");
+			System.out.println("# -> Par√°metros:  " + idSorteo + " - " + nombre + " - " + apellido + " - " + idCliente + " - " + razonSocialConcesionaria);
 			System.out.println("#");
 			return false;
 		}
@@ -284,14 +285,14 @@ public class Sorteo {
 	public void sendEmail(String aToEmailAddr,String aSubject, String aBody) throws MessagingException{
 
 		Properties props = new Properties();
-		props.put("mail.smtp.auth", "true");
-		props.put("mail.smtp.starttls.enable", "true");
-		props.put("mail.smtp.host", "smtp.gmail.com");
-		props.put("mail.smtp.port", "587");
+		props.put("mail.smtp.auth", "#mail.smtp.auth");
+		props.put("mail.smtp.starttls.enable", "#mail.smtp.starttls.enable");
+		props.put("mail.smtp.host", "#mail.smtp.host");
+		props.put("mail.smtp.port", "#mail.smtp.port");
 		
 		Session session = Session.getInstance(props, new javax.mail.Authenticator() {
 		    protected PasswordAuthentication getPasswordAuthentication() {
-		        return new PasswordAuthentication("info.picokm@gmail.com", "Picokm123");
+		        return new PasswordAuthentication("mail@mail.com", "contrase√±a");
 		    }
 		});
 		MimeMessage message = new MimeMessage(session);
